@@ -1,0 +1,101 @@
+// sass-lint:disable-all
+// Buttons variables
+
+$button-stroke: inset 0 0 0 2px;
+$drop-shadow: -2px 2px 0 0;
+$outline: -1px 1px 6px 3px #ccc;
+
+// Buttons
+
+// stylelint-disable selector-no-qualifying-type
+
+// Given that buttons should not have links nested inside of them
+// as the clock event does not fire, this is just being used for extendable styles. See the .link-button on this page.
+
+button,
+[type='button'],
+[type='submit'],
+[type='reset'],
+[type='image'] {
+  //@include font-smoothing;
+  margin: 0.5em 0.5em 0.5em 0;
+
+  display: inline-block;
+  width: auto;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  color: $white;
+  border: 0;
+  border-radius: $button-border-radius;
+  background-color: $color-primary;
+  box-shadow: $drop-shadow #333;
+  font-family: $font-sans;
+  font-size: $base-font-size;
+  font-weight: $font-bold;
+  line-height: 1;
+  appearance: none;
+
+  &:hover {
+    text-decoration: none;
+    color: $white;
+    border-bottom: 0;
+    background-color: $color-primary-darkest;
+  }
+
+  &:active {
+    background-color: $color-primary-darkest;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: $drop-shadow $color-primary-darkest, $outline;
+  }
+}
+
+@mixin button-unstyled {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  font-weight: $font-normal;
+  -webkit-font-smoothing: auto;
+
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+// Link button: a tag styled like a button.
+
+// Simple
+a.link-button {
+  @extend a.link-button;
+
+  color: $color-primary !important;
+  border: 2px solid $color-primary !important;
+  background-color: $white !important;
+  box-shadow: $drop-shadow $color-primary !important;
+
+  &:hover {
+    color: $color-primary-darkest !important;
+    background-color: $color-primary-extralight !important;
+    box-shadow: $drop-shadow $color-primary-darkest !important;
+  }
+
+  &:focus {
+    border: 0 !important;
+    background-color: $color-gray-lighter !important;
+    box-shadow: none !important;
+  }
+
+  &:active {
+    color: $white !important;
+    border-color: $color-primary-darkest !important;
+    background-color: $color-primary-darkest !important;
+    box-shadow: none !important;
+  }
+}
