@@ -24,6 +24,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "showdown": "^1.9.1",
     "typeface-lato": "0.0.75",
     "typeface-lustria": "0.0.72"
   },
