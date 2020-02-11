@@ -1,6 +1,12 @@
 import React from 'react';
+// markdown converter
+import showdown from 'showdown';
 import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+
 import Layout from '../components/layout';
+
+const converter = new showdown.Converter({ ghCompatibleHeaderId: true });
 
 const RecipeTemplate = ({ data }) => {
   const recipe = data.strapiRecipe;
@@ -13,12 +19,20 @@ const RecipeTemplate = ({ data }) => {
           {recipe.author.username}
         </Link>
       </p>
-      <p>{recipe.Body}</p>
+      <div
+        dangerouslySetInnerHTML={{ __html: converter.makeHtml(recipe.Body) }}
+      />
     </Layout>
   );
 };
 
 export default RecipeTemplate;
+
+RecipeTemplate.propTypes = {
+  data: PropTypes.shape({
+    strapiRecipe: PropTypes.object,
+  }).isRequired,
+};
 
 export const query = graphql`
 query RecipeTemplate($id: String) {

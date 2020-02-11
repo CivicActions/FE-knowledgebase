@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+
 import Layout from '../../components/layout';
 
 const RecipesIndex = ({ data }) => (
@@ -28,6 +30,12 @@ const RecipesIndex = ({ data }) => (
 );
 
 export default RecipesIndex;
+
+RecipesIndex.propTypes = {
+  data: PropTypes.shape({
+    allStrapiRecipe: PropTypes.object,
+  }).isRequired,
+};
 
 export const pageQuery = graphql`
   query IndexQuery {
