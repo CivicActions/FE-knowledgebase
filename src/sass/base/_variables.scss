@@ -1,0 +1,119 @@
+// These variables drive almost every aspect of the U.S. Web Design
+// system. Every variable is declared as !default so that it can be
+// overridden by a previous import.
+//
+// XXX Do not modify this file!
+//
+// If you want to override a variable, set that variable in one of your
+// own partials, then @import '{path/to/uswds/}core/variables'.
+
+// Typography
+// Function for stripping units from values. Used to set line-heights.
+@function strip-unit($number) {
+  @return $number / ($number * 0 + 1);
+}
+// Removing the !default from $em-base so we are not inheriting that
+// value from Bourbon.
+$rem-baseline: 16px;
+
+@function rem($size) {
+  $rem-size: $size / $rem-baseline;
+  @return $rem-size * 1rem;
+}
+
+$line-height: rem(15px);
+
+$em-base: 16px;
+$base-font-size: rem(20px) !default;
+$small-font-size: rem(15px) !default;
+$lead-font-size: rem(22px) !default;
+$title-font-size: 5.2rem !default;
+$stats-font-size: rem(75px) !default;
+$h1-font-size: rem(48px) !default;
+$h2-font-size: rem(44px) !default;
+$h3-font-size: rem(30px) !default;
+$h4-font-size: rem(24px) !default;
+$h5-font-size: $base-font-size !default;
+$h6-font-size: rem(13px) !default;
+$base-line-height: strip-unit($line-height) !default;
+$heading-line-height: 1.3 !default;
+$lead-line-height: 1.7 !default;
+
+$font-sans: 'Lato', Helvetica !default; // used in Body Text
+$font-serif: 'Lustria', Georgia !default; // used in Headings
+
+// TODO these should be called font-weight-${}
+$font-normal: 400 !default;
+$font-bold: 700 !default;
+
+// Color
+$red: #db1b3b;
+$coral: #ff564a;
+$teal: #097c86;
+$navy: #002f43;
+$light-gray: #e9e9e9;
+$gunmetal: #696969;
+$neutral: #fff7f6;
+$white: #fff;
+$black: #000;
+$color-gray-lighter: $light-gray;
+
+// Functional colors
+$color-primary: $teal !default;
+$color-primary-darker: darken($color-primary, 5%);
+$color-primary-darkest: darken($color-primary, 10%) !default;
+$color-primary-extralight: lighten($color-primary, 65%) !default;
+
+$color-primary-alt: $coral !default;
+$color-primary-alt-dark: darken($color-primary-alt, 5%) !default;
+$color-primary-alt-darkest: darken($color-primary-alt, 10%) !default;
+$color-primary-alt-light: lighten($color-primary-alt, 5%) !default;
+$color-primary-alt-lightest: lighten($color-primary-alt, 10%) !default;
+
+$color-secondary: $red !default;
+$color-secondary-dark: darken($color-secondary, 5%) !default;
+$color-secondary-darkest: darken($color-secondary, 10%) !default;
+$color-secondary-light: lighten($color-secondary, 5%) !default;
+$color-secondary-lightest: lighten($color-secondary, 10%) !default;
+
+$color-base: $navy !default;
+$color-focus: $neutral !default;
+$color-visited: $teal !default;
+
+// Mobile First Breakpoints
+$small-screen: 481px !default;
+$medium-screen: 600px !default;
+$medium-large-screen: 1000px !default;
+$large-screen: 1201px !default;
+
+// Extra Layout classes
+$section-margin: rem(50px);
+$cite-margin: rem(30px);
+
+// Magic Numbers
+$text-max-width: 65rem !default; //66ch changed to rem widths because ch is not consistent across different font sizes !default; // 66 characters per line
+$lead-max-width: 77rem !default;
+$site-max-width: 1040px !default;
+$site-margins: 3rem !default;
+$site-margins-mobile: 1.5rem !default;
+$article-max-width: 600px !default;
+$input-max-width: 46rem !default;
+$label-border-radius: 2px !default;
+$checkbox-border-radius: 2px !default;
+$border-radius: 3px !default;
+$button-border-radius: 0 !default;
+$box-shadow: 0 0 2px #ddd !default;
+$focus-outline: 2px dotted #999 !default;
+$focus-spacing: 3px !default;
+$nav-width: 850px !default;
+$sidenav-current-border-width: 0.4rem !default; // must be in rem for math
+
+// 44 x 44 pixels hit target following Apple iOS Human Interface
+// Guidelines
+$hit-area: 4.4rem !default;
+
+$spacing-x-small: 0.5rem;
+$spacing-small: 1rem;
+$spacing-md-small: 1.5rem;
+$spacing-medium: 2rem;
+$spacing-large: 3rem;

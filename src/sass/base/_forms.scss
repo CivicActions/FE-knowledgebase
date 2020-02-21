@@ -1,0 +1,38 @@
+.form {
+  &__field {
+    max-width: 46rem;
+    margin: 0 auto;
+
+    .error {
+      border: 2px solid red;
+    }
+  }
+
+  &__submit {
+    margin: 80px auto $section-margin;
+    padding-top: 30px;
+    text-align: center;
+    border-top: 1px solid $navy;
+  }
+
+  &__gotcha {
+    display: none;
+  }
+}
+
+input,
+textarea {
+  &:focus {
+    @include outline;
+
+    outline: 0;
+  }
+
+  &:invalid:visited {
+    border: 2px solid $color-secondary;
+  }
+}
+
+label {
+  font-weight: bold;
+}
