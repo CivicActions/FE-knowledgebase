@@ -21,7 +21,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-strapi',
       options: {
-        apiURL: 'http://localhost:1337',
+        apiURL: 'https://fe-knowledgebase-cms.herokuapp.com',
         contentTypes: [
           'recipe',
           'user'
