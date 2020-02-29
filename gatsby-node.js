@@ -35,6 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
       component: recipeTemplate,
       context: {
         title: edge.node.Title,
+        id: edge.node.id
       },
     })
   })
