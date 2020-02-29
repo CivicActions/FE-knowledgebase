@@ -19,6 +19,16 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
     {
+      resolve: 'gatsby-source-strapi',
+      options: {
+        apiURL: 'https://fe-knowledgebase-cms.herokuapp.com',
+        contentTypes: [
+          'recipe',
+          'user'
+        ]
+      }
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: 'gatsby-starter-default',
