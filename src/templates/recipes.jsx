@@ -1,24 +1,22 @@
 import React from 'react';
 // markdown converter
 import showdown from 'showdown';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import Layout from '../components/layout';
+import AuthorLink from '../components/author-link';
 
 const converter = new showdown.Converter({ ghCompatibleHeaderId: true });
 
 const RecipeTemplate = ({ data }) => {
   const recipe = data.strapiRecipe;
+  const author = recipe.author ? <AuthorLink uid={recipe.author.id} name={recipe.author.username} /> : '';
+
   return (
     <Layout>
       <h1>{recipe.Title}</h1>
-      <p>
-        By:
-        <Link to={`/authors/User_${recipe.author.id}`}>
-          {recipe.author.username}
-        </Link>
-      </p>
+      {author}
       <div
         dangerouslySetInnerHTML={{ __html: converter.makeHtml(recipe.Body) }}
       />
@@ -35,7 +33,7 @@ RecipeTemplate.propTypes = {
 };
 
 export const query = graphql`
-query RecipeTemplate($id: String) {
+query RecipeTemplate($id: String!) {
   strapiRecipe(id: { eq: $id }) {
       Title
       Created
