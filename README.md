@@ -1,97 +1,82 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
-<p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
-  </a>
-</p>
 <h1 align="center">
-  Gatsby's default starter
+  The CivicActions FrontEnd Knowledgebase
 </h1>
-
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
-
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the default starter.
-
+1.  **Clone this Gatsby site.**
     ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
+    git clone git@github.com:CivicActions/FE-knowledgebase.git
     ```
+
 
 1.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd my-default-starter/
+    cd FE-Knowledgebase/
+    npm install
     gatsby develop
     ```
 
 1.  **Open the source code and start editing!**
 
-    Your site is now running at `http://localhost:8000`!
+    Your site is now running at http://localhost:8000
 
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
+    _Note: You'll also see a second link: [http://localhost:8000/___graphql](http://localhost:8000/___graphql). This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    Open the `FE-Knowledgebase` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
-## 🧐 What's inside?
+## 🧐 What's this & where's the  rest of it?
 
-A quick look at the top-level files and directories you'll see in a Gatsby project.
+The FE Knowledge-base is a repository for our Front-End best practices and development tools. It can be viewed here: https://civicactions.github.io/FE-knowledgebase/
 
-    .
-    ├── node_modules
-    ├── src
-    ├── .gitignore
-    ├── .prettierrc
-    ├── gatsby-browser.js
-    ├── gatsby-config.js
-    ├── gatsby-node.js
-    ├── gatsby-ssr.js
-    ├── LICENSE
-    ├── package-lock.json
-    ├── package.json
-    └── README.md
+It is made up of:
+1. This github repo
+2. A Component Library built with PatternLab:
+    * Github Repo: https://github.com/CivicActions/FE-component-library
+    * Component Library: https://civicactions.github.io/FE-component-library/
+3. A Static CMS: https://fe-knowledgebase-cms.herokuapp.com/
 
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
+## 🏗 Development Workflow
+### Adding new features
+1. Follow the quick start steps above to run the gatsby server.
+1. Make changes and commit. 
+1. Create a feature branch  your commits and push to the git repo. `git push origin`.
+1. Create a PR against the master branch from the remote branch. 
+1. Add a description and any testing steps and tag a dev to review your PR.
 
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
+### Code Review 
+We don't have review environments yet so we need to do manual reviews in the interim.
+1. When tagged to review a PR, checkout the branch locally
+    ```shell
+    git fetch origin
+    git checkout -b branch-name origin/branch-name
+    ```
+1. Run `npm install` and `gatsby develop`.
+1. Review the changes in http://localhost:8000
+1. If things look kosher, merge the PR on github and then proceed to the Deploy section below!
 
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
+## 💫 How to Deploy
+The knowledge-base is currently hosted on Github pages and requires a manual deploy process.
+1. Checkout your local master branch and pull in the latest changes.
+    ```shell
+    git checkout master
+    git fetch origin
+    git pull --rebase origin master
+    ```
+2. Deploy the site by running 
+    ```shell
+    npm install
+    npm run deploy 
+    ```
+    When you run the deploy command, the gatsby site will be compiled for production and all contents of the public folder will be moved to the repository’s gh-pages branch.
 
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
+## 😻 How to add content
+All content is added in a seperately hosted CMS. To contribute, contact any project maintainer for a content editor account.
+1. Log into the CMS with your editor account.
+1. Create a new post or edit any post and Save.
+1. Run through the deployment steps above to trigger a redeployment with the latest content updates.
 
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
