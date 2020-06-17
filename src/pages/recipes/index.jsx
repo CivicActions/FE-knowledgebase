@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
-import Truncate from 'react-truncate';
 
 import Layout from '../../components/layout';
 
@@ -23,11 +22,6 @@ const RecipesIndex = ({ data }) => (
             </Link>
           </h3>
 
-          <div>
-            <Truncate lines={3} ellipsis={<span>...</span>}>
-              { document.node.Body }
-            </Truncate>
-          </div>
         </li>
       ))}
     </ul>
