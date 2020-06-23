@@ -21,7 +21,7 @@ const RecipesIndex = ({ data }) => (
               { document.node.Title }
             </Link>
           </h3>
-
+          <p>{ document.node.Summary }</p>
         </li>
       ))}
     </ul>
@@ -45,6 +45,7 @@ export const pageQuery = graphql`
           Title
           Body
           Tags
+          Summary
           author {
             username
           }
