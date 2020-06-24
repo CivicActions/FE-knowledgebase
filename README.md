@@ -38,7 +38,7 @@ It is made up of:
 2. A Component Library built with PatternLab:
     * Github Repo: https://github.com/CivicActions/FE-component-library
     * Component Library: https://civicactions.github.io/FE-component-library/
-3. A Static CMS: https://fe-knowledgebase-cms.herokuapp.com/
+3. A Static CMS built with Strapi: https://fe-knowledgebase-cms.herokuapp.com/
 
 ## 🏗 Development Workflow
 ### Adding new features
@@ -75,8 +75,19 @@ The knowledge-base is currently hosted on Github pages and requires a manual dep
     When you run the deploy command, the gatsby site will be compiled for production and all contents of the public folder will be moved to the repository’s gh-pages branch.
 
 ## 😻 How to add content
-All content is added in a seperately hosted CMS. To contribute, contact any project maintainer for a content editor account.
-1. Log into the CMS with your editor account.
-1. Create a new post or edit any post and Save.
+Content is split into a few types, there are top level pages and recipes. There are plans to also add Projects in the future.
+
+Top level pages are high level pages about particular frontend topics, these can contain basic descriptions and links to resources. Recipes are step by step walk throughs or tutorials on how to setup or do specific tasks. 
+
+Top level pages are built as static `.mdx` files. You can see these in the `pages` directory. These are edited and added in this repo.
+
+Recipes are added in a separately hosted Strapi CMS. To contribute to recipes, contact any project maintainer for a content editor account.
+
+1. Log into the CMS with your editor account: https://fe-knowledgebase-cms.herokuapp.com/
+1. Create a new recipe or edit any recipe and Save.
 1. Run through the deployment steps above to trigger a redeployment with the latest content updates.
 
+## Making edits to Strapi
+If you need to add a field or even a whole content type to the Strapi CMS you will need to pull down a local version of the CMS from this repo: https://github.com/CivicActions/fe-knowledgebase-cms
+
+After making your changes locally, submit a pull request to get them deployed to the CMS.
