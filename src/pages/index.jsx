@@ -12,6 +12,9 @@ const IndexPage = () => (
       Whether you’re starting a new project or looking for inspiration, you’ve come to the
       right place. (...Add some more details here about how to use the playbook.)
     </div>
+    <div>
+      <Link to="/about/">About this knowledge-base.</Link>
+    </div>
     <p>To get started, search for a topic or explore the sections listed below.</p>
     <h2>Top level pages:</h2>
     <ul>
