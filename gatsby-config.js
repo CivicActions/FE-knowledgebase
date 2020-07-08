@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: '/FE-knowledgebase',
   siteMetadata: {
-    title: 'FE-knowledgebase',
+    title: 'Front-End Knowledgebase',
     description: 'A knowledge base for the frontend team at CivicActions.',
     author: '@civicactions',
   },
