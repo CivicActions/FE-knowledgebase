@@ -9,8 +9,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import RelatedRecipies from './RelatedRecipes';
+import Header from './header/header';
+import '../sass/styles.scss';
+import '../sass/components/layout.scss';
 
-import Header from './header';
 
 const Layout = ({ children, tag }) => {
   const data = useStaticQuery(graphql`
