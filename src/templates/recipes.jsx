@@ -28,7 +28,7 @@ export default RecipeTemplate;
 
 RecipeTemplate.propTypes = {
   data: PropTypes.shape({
-    strapiRecipe: PropTypes.object,
+    strapiRecipe: PropTypes.objectOf(PropTypes.string),
   }).isRequired,
 };
 
