@@ -33,7 +33,7 @@ export default RecipesIndex;
 
 RecipesIndex.propTypes = {
   data: PropTypes.shape({
-    allStrapiRecipe: PropTypes.object,
+    allStrapiRecipe: PropTypes.objectOf(PropTypes.string),
   }).isRequired,
 };
 
