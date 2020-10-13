@@ -12,13 +12,13 @@ exports.createPages = async ({ graphql, actions }) => {
   const recipeTemplate = path.resolve(`src/templates/recipes.jsx`);
   const result = await graphql(`
     query {
-      allStrapiRecipe {
+      allStrapiRecipes {
         edges {
           node {
             Title
             Body
             Tags
-            author {
+            Author {
               username
             }
             created_at
@@ -28,7 +28,8 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  result.data.allStrapiRecipe.edges.forEach(edge => {
+  console.log(result.data);
+  result.data.allStrapiRecipes.edges.forEach(edge => {
     let slug = edge.node.Title.replace(/\s+/g, '-').toLowerCase();
     createPage({
       path: `recipes/${slug}`,

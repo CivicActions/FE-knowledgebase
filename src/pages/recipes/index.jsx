@@ -11,7 +11,7 @@ const RecipesIndex = ({ data }) => (
 
     <h2>All Recipes</h2>
     <ul>
-      {data.allStrapiRecipe.edges.map((document) => (
+      {data.allStrapiRecipes.edges.map((document) => (
         <li key={document.node.id}>
           <h3>
             <Link
@@ -33,20 +33,20 @@ export default RecipesIndex;
 
 RecipesIndex.propTypes = {
   data: PropTypes.shape({
-    allStrapiRecipe: PropTypes.objectOf(PropTypes.string),
+    allStrapiRecipes: PropTypes.objectOf(PropTypes.array),
   }).isRequired,
 };
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allStrapiRecipe {
+    allStrapiRecipes {
       edges {
         node {
           Title
           Body
           Tags
           Summary
-          author {
+          Author {
             username
           }
           created_at
