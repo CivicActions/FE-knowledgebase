@@ -8,11 +8,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import RelatedRecipies from './RelatedRecipes';
 import Header from './header/header';
 import '../sass/styles.scss';
 import '../sass/components/layout.scss';
-
+import RelatedRecipes from './RelatedRecipes';
 
 const Layout = ({ children, tag }) => {
   const data = useStaticQuery(graphql`
@@ -36,7 +35,7 @@ const Layout = ({ children, tag }) => {
         }}
       >
         <main>{children}</main>
-        {tag ? <aside><RelatedRecipies tag={tag} /></aside> : '' }
+        {tag ? <aside><RelatedRecipes tag={tag} /></aside> : '' }
         <footer>
           ©
           {' '}

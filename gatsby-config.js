@@ -21,11 +21,17 @@ module.exports = {
     {
       resolve: 'gatsby-source-strapi',
       options: {
-        apiURL: 'https://fe-knowledgebase-cms.herokuapp.com',
+        apiURL: 'https://fe-strapi.herokuapp.com',
+        queryLimit: 1000,
         contentTypes: [
-          'recipe',
+          'recipes',
           'user'
-        ]
+        ],
+        singleTypes: [],
+        loginData: {
+          identifier: "",
+          password: "",
+        },
       }
     },
     {
