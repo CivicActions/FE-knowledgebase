@@ -88,6 +88,6 @@ Recipes are added in a separately hosted Strapi CMS. To contribute to recipes, c
 1. Run through the deployment steps above to trigger a redeployment with the latest content updates.
 
 ## Making edits to Strapi
-If you need to add a field or even a whole content type to the Strapi CMS you will need to pull down a local version of the CMS from this repo: https://github.com/CivicActions/fe-knowledgebase-cms
+If you need to add a field or even a whole content type to the Strapi CMS you will need to pull down a local version of the CMS from this repo: https://github.com/CivicActions/FE-knowledgebase-Strapi
 
 After making your changes locally, submit a pull request to get them deployed to the CMS.
